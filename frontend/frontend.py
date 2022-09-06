@@ -16,7 +16,7 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x,imgproc=lambda 
                 with gr.Row(elem_id="prompt_row"):
                     txt2img_prompt = gr.Textbox(label="Prompt",
                                                 elem_id='prompt_input',
-                                                placeholder="A corgi wearing a top hat as an oil painting.",
+                                                placeholder="",
                                                 lines=1,
                                                 max_lines=1 if txt2img_defaults['submit_on_enter'] == 'Yes' else 25,
                                                 value=txt2img_defaults['prompt'],
@@ -142,7 +142,7 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x,imgproc=lambda 
                 )
 
 
-            with gr.TabItem("Image-to-Image Unified", id="img2img_tab"):
+            with gr.TabItem("Image-to-Image", id="img2img_tab"):
                 with gr.Row(elem_id="prompt_row"):
                     img2img_prompt = gr.Textbox(label="Prompt",
                                                 elem_id='img2img_prompt_input',
@@ -442,7 +442,7 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x,imgproc=lambda 
                                             gr.Markdown("<b>GoBig Settings</b>")
                                             imgproc_prompt = gr.Textbox(label="",
                                                                         elem_id='prompt_input',
-                                                                        placeholder="A corgi wearing a top hat as an oil painting.",
+                                                                        placeholder="",
                                                                         lines=1,
                                                                         max_lines=1,
                                                                         value=imgproc_defaults['prompt'],
@@ -554,13 +554,6 @@ def draw_gradio_ui(opt, img2img=lambda x: x, txt2img=lambda x: x,imgproc=lambda 
                     [realesrgan_source, tabs],
                     _js=js_move_image('txt2img_gallery_output', 'img2img_editor'))
         """
-        gr.HTML("""
-    <div id="90" style="max-width: 100%; font-size: 12px; text-align: center;" class="output-markdown gr-prose border-solid border border-gray-200 rounded gr-panel">
-        <p>For help and advanced usage guides, visit the <a href="https://github.com/hlky/stable-diffusion-webui/wiki" target="_blank">Project Wiki</a></p>
-        <p>Stable Diffusion WebUI is an open-source project. You can find the latest stable builds on the <a href="https://github.com/hlky/stable-diffusion" target="_blank">main repository</a>.
-        If you would like to contribute to development or test bleeding edge builds, you can visit the <a href="https://github.com/hlky/stable-diffusion-webui" target="_blank">developement repository</a>.</p>
-    </div>
-    """)
         # Hack: Detect the load event on the frontend
         # Won't be needed in the next version of gradio
         # See the relevant PR: https://github.com/gradio-app/gradio/pull/2108
