@@ -6,3 +6,5 @@ models/ldm/stable-diffusion-v1/
 gfpgan/
 src/**
 **/__pycache__
+
+tf/datasets/*.h5

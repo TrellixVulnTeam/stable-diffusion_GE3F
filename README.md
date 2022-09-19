@@ -4,6 +4,7 @@ Custom installation to combine all of the best work related to **Stable Diffusio
 - Working on `WSL2` with `CUDA`
 - With latest versions of `Python` packages
 - Running in global context Without Anaconda`
+- And **TensorFlow** port in `/tf`
 
 ## What's included?
 
@@ -33,7 +34,9 @@ Custom installation to combine all of the best work related to **Stable Diffusio
 
 ### Enhancements
 - [Memory Optimized Executor](https://github.com/basujindal/stable-diffusion)
-- [Web-UI](https://github.com/hlky/stable-diffusion-webui) [[Readme]](https://github.com/vladmandic/stable-diffusion/blob/main/WEBUI.md)
+- [Web-UI](https://github.com/sd-webui/stable-diffusion-webui) [[Readme]](https://github.com/vladmandic/stable-diffusion/blob/main/WEBUI.md)
+- [General Enhancements](https://github.com/lstein/stable-diffusion)
+- [TensorFlow Port](https://github.com/divamgupta/stable-diffusion-tensorflow)
 
 ### Auxiliary models
 - [K-Diffusion](https://github.com/crowsonkb/k-diffusion)
@@ -152,6 +155,12 @@ Check functionality
 > python optimized/txt2img_gradio.py  
 
       running on local URL:  http://127.0.0.1:7860/
+
+### TensorFlow Port
+*Note* Models are auto-downloaded on first run  
+*Example*  
+> cd tf
+> python text2image.py --prompt="storm over rijeka, croatia during night in style of unreal engine"
 
 <br>
 
